@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Leandrinho's Barber</title>
+    <meta name="description" content="App de gestão para Leandrinho's Barber - Agenda, clientes, serviços e mais." />
+    <meta name="author" content="Leandrinho's Barber" />
+    <meta name="theme-color" content="#C9A556" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Leandrinho's" />
+    
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <meta property="og:title" content="Leandrinho's Barber" />
+    <meta property="og:description" content="App de gestão para Leandrinho's Barber" />
+    <meta property="og:type" content="website" />
+
+    <style>
+      /* Safe area padding for iOS */
+      .safe-area-inset-top {
+        padding-top: env(safe-area-inset-top, 0);
+      }
+      .safe-area-inset-bottom {
+        padding-bottom: env(safe-area-inset-bottom, 0);
+      }
+    </style>
+  </head>
+
+  <body class="dark">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

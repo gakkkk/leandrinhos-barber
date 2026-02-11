@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 8%;
+    --foreground: 43 25% 90%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 43 25% 90%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 43 25% 90%;
+
+    --primary: 43 60% 55%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 43 25% 85%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 43 10% 60%;
+
+    --accent: 43 50% 45%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 43 60% 55%;
+
+    --radius: 0.75rem;
+
+    --gold: 43 60% 55%;
+    --gold-light: 43 50% 70%;
+    --gold-dark: 43 70% 35%;
+    --beige: 43 25% 85%;
+    --beige-muted: 43 15% 65%;
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 43 25% 90%;
+    --sidebar-primary: 43 60% 55%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 43 25% 90%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 43 60% 55%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 43 25% 90%;
+    --card: 0 0% 12%;
+    --card-foreground: 43 25% 90%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 43 25% 90%;
+    --primary: 43 60% 55%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 43 25% 85%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 43 10% 60%;
+    --accent: 43 50% 45%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 43 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: var(--font-body);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .text-beige {
+    color: hsl(var(--beige));
+  }
+
+  .text-beige-muted {
+    color: hsl(var(--beige-muted));
+  }
+
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+
+  .shadow-gold {
+    box-shadow: 0 4px 20px -5px hsl(var(--gold) / 0.3);
+  }
+
+  .shadow-card {
+    box-shadow: 0 4px 30px -10px hsl(0 0% 0% / 0.5);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--gold) / 0.5);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--gold) / 0.7);
+  }
+}
+
+@layer components {
+  .card-premium {
+    @apply bg-card border border-border/50 rounded-xl shadow-card backdrop-blur-sm;
+  }
+
+  .btn-gold {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 font-medium transition-all duration-300 shadow-gold hover:shadow-lg;
+  }
+
+  .btn-outline-gold {
+    @apply border border-primary text-primary hover:bg-primary/10 font-medium transition-all duration-300;
+  }
+
+  .input-premium {
+    @apply bg-secondary/50 border-border/50 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20;
+  }
+
+  .current-time-indicator {
+    @apply absolute left-0 right-0 h-0.5 bg-primary z-10;
+    box-shadow: 0 0 10px hsl(var(--gold) / 0.5);
+  }
+}
