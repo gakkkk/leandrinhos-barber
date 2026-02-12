@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,6 +10,7 @@ import { toast } from 'sonner';
 
 const Login = () => {
   const { login } = useAuth();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -21,6 +23,7 @@ const Login = () => {
       const success = login(email, password);
       if (success) {
         toast.success('Login realizado com sucesso!');
+        navigate('/dashboard');
       } else {
         toast.error('Email ou senha incorretos');
       }
